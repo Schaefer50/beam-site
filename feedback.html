@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Beam Feedback</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  textarea {
+    width: 100%; box-sizing: border-box;
+    font: 16px/1.5 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    color: var(--text); background: transparent;
+    border: 1px solid var(--muted); border-radius: 10px; padding: 12px;
+  }
+  #note { min-height: 120px; }
+  #report { min-height: 180px; font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: var(--muted); }
+  button {
+    display: block; width: 100%; margin: 12px 0 0; padding: 14px;
+    font: 600 17px -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    border: 0; border-radius: 12px; color: #fff; background: var(--link); cursor: pointer;
+  }
+  .steps { padding-left: 1.2rem; }
+  .status { color: var(--muted); min-height: 1.6em; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main>
+<p class="back"><a href="./">Beam</a></p>
+<h1>Send Feedback</h1>
+
+<div id="loaded" class="hidden">
+<p class="meta">This is your Apple TV's diagnostics from Beam. Add what happened, then send it through TestFlight.</p>
+
+<h2>What happened?</h2>
+<textarea id="note" placeholder="What were you doing, and what went wrong? If a file won't play, its format helps a lot."></textarea>
+
+<h2>Diagnostics</h2>
+<textarea id="report" readonly></textarea>
+
+<button id="send">Copy &amp; open TestFlight</button>
+<p class="status" id="status"></p>
+
+<h2>Then, in TestFlight</h2>
+<ol class="steps">
+<li>Open <strong>Beam</strong> (it's listed under Apple TV).</li>
+<li>Tap <strong>Send Beta Feedback</strong>.</li>
+<li>Paste, and send.</li>
+</ol>
+</div>
+
+<div id="empty" class="hidden">
+<p>This page shows the diagnostics from Beam's <strong>Send Feedback</strong> QR code on your Apple TV (Settings → About → Send Feedback). Scan that code with your iPhone's camera to open it here.</p>
+</div>
+
+<p class="meta">The diagnostics are in this page's link, after the “#”, and browsers never send that part to the website. Nothing here is uploaded; it goes only where you send it. See the <a href="privacy.html">privacy policy</a>.</p>
+</main>
+
+<script>
+(async () => {
+  const fromBase64URL = (text) => {
+    let b64 = text.replace(/-/g, "+").replace(/_/g, "/");
+    while (b64.length % 4) b64 += "=";
+    return Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+  };
+  const inflate = async (bytes) => {
+    const stream = new Blob([bytes]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+    return new Uint8Array(await new Response(stream).arrayBuffer());
+  };
+
+  let report = "";
+  try {
+    const params = new URLSearchParams(location.hash.slice(1));
+    if (params.has("z")) {
+      report = new TextDecoder().decode(await inflate(fromBase64URL(params.get("z"))));
+    } else if (params.has("r")) {
+      report = new TextDecoder().decode(fromBase64URL(params.get("r")));
+    }
+  } catch (error) {
+    report = "";
+  }
+
+  if (!report) {
+    document.getElementById("empty").classList.remove("hidden");
+    return;
+  }
+  document.getElementById("report").value = report;
+  document.getElementById("loaded").classList.remove("hidden");
+
+  document.getElementById("send").addEventListener("click", async () => {
+    const note = document.getElementById("note").value.trim();
+    const text = (note ? note + "\n\n---\n" : "") + report;
+    const status = document.getElementById("status");
+    try {
+      await navigator.clipboard.writeText(text);
+      status.textContent = "Copied. Opening TestFlight…";
+    } catch (error) {
+      const box = document.getElementById("report");
+      box.value = text;
+      box.select();
+      status.textContent = "Select all and copy the diagnostics above, then open TestFlight.";
+    }
+    setTimeout(() => { location.href = "itms-beta://"; }, 400);
+  });
+})();
+</script>
+</body>
+</html>
