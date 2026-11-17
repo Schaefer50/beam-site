@@ -10,7 +10,7 @@
 <main>
 <p class="back"><a href="./">Beam</a></p>
 <h1>Privacy Policy</h1>
-<p class="meta">Effective 6 October 2026</p>
+<p class="meta">Effective 17 November 2026</p>
 
 <p>Beam is an app for Apple TV, iPhone and iPad. It plays media from servers and services you already use: Plex, Jellyfin, Emby and your own IPTV subscription. This policy explains what information Beam handles and where it goes.</p>
 
@@ -19,6 +19,7 @@
 <li>Beam has no account with us, no analytics, no advertising and no tracking. We don't sell or share personal information.</li>
 <li>Your server sign-ins stay on your devices and in your own iCloud account. We never receive them.</li>
 <li>The only information that reaches a service we run is a Watch Together session, while you're using one (see below).</li>
+<li>Beam Pro is bought through Apple. We never see your payment details.</li>
 <li>Diagnostics are sent only when you choose to send them, to whoever you choose.</li>
 </ul>
 
@@ -26,21 +27,29 @@
 <p>To connect to your servers, Beam stores the following on the device:</p>
 <ul>
 <li>The addresses you enter.</li>
-<li>Sign-in tokens or passwords for Plex, Jellyfin, Emby, your IPTV provider, OpenSubtitles, Overseerr/Jellyseerr and Yahoo Fantasy.</li>
+<li>Sign-in tokens or passwords for Plex, Jellyfin, Emby, your IPTV provider, OpenSubtitles and Overseerr/Jellyseerr.</li>
 <li>Your settings: Live TV favourites, hidden categories, layout and playback preferences.</li>
 </ul>
 <p>How sign-ins are kept:</p>
 <ul>
 <li>They're kept in the device's Keychain.</li>
-<li>Apple TV can clear an app's Keychain items when the app is updated. So Beam also keeps a copy in its own private storage on the device, where other apps can't read it.</li>
+<li>Apple TV can clear an app's Keychain items when the app is updated. So until Beam has seen the Keychain keep its sign-ins through an update on that device, it also keeps a copy in its own private storage, where other apps can't read it. Once the Keychain has proven reliable, that copy is deleted.</li>
 <li>Deleting Beam removes everything it stored on that device.</li>
+</ul>
+
+<h2>Top Shelf, widgets, Siri and Spotlight</h2>
+<ul>
+<li><strong>Top Shelf:</strong> on Apple TV, Beam saves your Continue Watching list (titles, progress and pictures) on the device so it can appear above Beam on the Home Screen. It's never shown for a profile protected by a PIN, and you can turn it off in Settings → Home &amp; Appearance → Top Shelf.</li>
+<li><strong>Widgets and Live Activities:</strong> on iPhone and iPad, the Continue Watching widget uses the same list, and a download's progress can show on the Lock Screen. Both stay on the device.</li>
+<li><strong>Siri and Spotlight:</strong> Beam tells your device which titles and channels you open or play, so Siri can act on them and suggest them. This stays with Apple's on-device features and is covered by Apple's privacy policy; it isn't sent to us.</li>
 </ul>
 
 <h2>iCloud</h2>
 <p>If you're signed in to iCloud, the following sync to your other Apple TVs and iOS devices on the same Apple ID through your own iCloud account:</p>
 <ul>
 <li>some settings;</li>
-<li>your Live TV, Jellyfin/Emby and OpenSubtitles sign-ins.</li>
+<li>your Live TV, Jellyfin/Emby, OpenSubtitles and Overseerr/Jellyseerr sign-ins;</li>
+<li>your Plex sign-in, end-to-end encrypted in your iCloud's private storage so that a new Apple TV can set itself up. Its keys are kept in your iCloud Keychain, so neither we nor Apple can read it. The new Apple TV uses it once to approve its own Plex sign-in.</li>
 </ul>
 <p>This uses iCloud Keychain and iCloud key-value storage, so you don't have to sign in again on each device. A consequence is that signing out of one of those services on one device signs it out on all of them. We can't read your iCloud data. To turn this off, turn off iCloud for Beam in your device's settings.</p>
 
@@ -50,10 +59,16 @@
 <li>your Plex servers and plex.tv (for Plex sign-in);</li>
 <li>your Jellyfin or Emby servers;</li>
 <li>your IPTV provider;</li>
-<li>and, if you set them up, OpenSubtitles, Overseerr/Jellyseerr and Yahoo Fantasy.</li>
+<li>and, if you set them up, OpenSubtitles and Overseerr/Jellyseerr.</li>
 </ul>
 <p>What those services receive is covered by their own privacy policies. None of it passes through us.</p>
-<p>Beam asks for <strong>local network</strong> access only to reach servers on your home network.</p>
+<p>Beam asks for <strong>local network</strong> access to reach servers on your home network, and to find Beam on your other devices for Multiview's “Listen on iPhone”, which plays a channel's sound on your iPhone. That sound goes straight between your devices on your own network. Beam on your iPhone also finds Beam on your Apple TVs this way, to show what an Apple TV is playing on the iPhone's Lock Screen.</p>
+
+<h2>Downloads and CarPlay</h2>
+<ul>
+<li><strong>Downloads:</strong> on iPhone and iPad you can save films, episodes and music from your servers to watch or listen offline. They're stored in Beam's own storage on the device and removed when you delete them or Beam. A server may make a smaller copy for the download; that request goes to your server like any other.</li>
+<li><strong>CarPlay:</strong> Beam shows your music and Live TV on your car's screen. Nothing extra is collected or sent.</li>
+</ul>
 <p>On iPhone and iPad it asks for the <strong>camera</strong> only to scan a Watch Together QR code. Nothing from the camera is stored or sent.</p>
 
 <h2>Watch Together</h2>
@@ -71,9 +86,12 @@
 <p><strong>How long it's kept:</strong></p>
 <ul>
 <li>The record is deleted when the host ends the session.</li>
-<li>If the host's app closes before the session ends, the record can remain in the database. You can ask us to delete it, using the address below.</li>
+<li>If the host's app closes before the session ends, Beam deletes the record the next time the host opens it. You can also ask us to delete it, using the address below.</li>
 </ul>
 <p>Watch Together is optional. If you don't use it, nothing is stored there.</p>
+
+<h2>Beam Pro</h2>
+<p>Beam Pro is a subscription or one-time purchase made through Apple's App Store, and can be shared with your Family Sharing group. Apple handles the payment and tells Beam on your device whether Pro is active; Beam keeps only that status. We don't receive your name, Apple ID or payment details. Apple's privacy policy covers purchases.</p>
 
 <h2>Diagnostics and feedback</h2>
 <p>In Settings → About → Send Feedback, Beam can put together a diagnostics report. It does this only when you ask. The report contains:</p>
@@ -83,7 +101,8 @@
 <li>your time zone and region;</li>
 <li>which kinds of server are connected, and how many libraries each has;</li>
 <li>the playback settings that affect how files play;</li>
-<li>Beam's own log lines from the current session.</li>
+<li>Beam's own log lines from the current session;</li>
+<li>on iPhone and iPad, recent crash and hang reports that the system gave Beam, kept on the device until then.</li>
 </ul>
 <p>Sign-in tokens and passwords are removed from those log lines before the report is made. A line can still include the network address of a server.</p>
 <p>Beam doesn't send the report anywhere itself:</p>

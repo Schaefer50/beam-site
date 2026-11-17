@@ -3,39 +3,392 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Beam Support</title>
-<link rel="stylesheet" href="style.css">
+<title>BeamOS — The player for Plex, Jellyfin, Emby and Live TV</title>
+<meta name="description" content="BeamOS plays your Plex, Jellyfin and Emby libraries and your Live TV exactly as the files were made: 4K, HDR10+, Dolby Vision, AV1 and Dolby Atmos with no transcoding.">
+<meta property="og:title" content="BeamOS — The player for Plex, Jellyfin, Emby and Live TV">
+<meta property="og:description" content="Your Plex, Jellyfin, Emby and Live TV, in its best light. 4K, HDR10+, Dolby Vision, AV1 and Dolby Atmos, no transcoding.">
+<meta property="og:image" content="assets/shot-title.jpg">
+<meta name="theme-color" content="#07080d">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/site.css?v=8">
+<script src="assets/config.js?v=2" defer></script>
 </head>
 <body>
-<main>
-<h1>Beam</h1>
-<p>Beam plays your own media servers on Apple TV, iPhone and iPad:</p>
-<ul>
-<li>Plex, Jellyfin and Emby;</li>
-<li>and your IPTV subscription (Xtream Codes) on Apple TV.</li>
-</ul>
-<p>It plays files untouched wherever the device can handle them.</p>
 
-<h2>Getting help</h2>
-<ul>
-<li><strong>From the app:</strong> Settings → About → <strong>Send Feedback</strong>.
-  <ul>
-  <li>On iPhone and iPad, choose where to send it.</li>
-  <li>On Apple TV, scan the QR code with your phone.</li>
-  </ul>
-  The report includes Beam's diagnostics, without passwords or sign-in tokens.</li>
-<li><strong>TestFlight testers:</strong> use TestFlight's <em>Send Beta Feedback</em> too. If Beam crashed, open it again first, then send feedback saying what you were doing.</li>
-<li><strong>Email:</strong> <a href="mailto:lschaefer50@gmail.com">lschaefer50@gmail.com</a></li>
-</ul>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/icon.png" alt="">BeamOS</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#live-tv">Live TV</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#specs">Specs</a>
+      <a href="#community">Community</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <a class="btn btn-primary btn-small" data-link="appStore" data-soon-text="Coming soon">Get BeamOS</a>
+  </div>
+</header>
 
-<h2>Before you write</h2>
-<ul>
-<li>Live TV supports Xtream Codes accounts. M3U playlists aren't supported yet.</li>
-<li>Type your server's address; automatic discovery isn't built yet.</li>
-<li>Jellyfin and Emby sign in with a username and password. Quick Connect and SSO aren't supported yet.</li>
-</ul>
+<main id="top">
 
-<p><a href="privacy.html">Privacy Policy</a></p>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Plex · Jellyfin · Emby · Live TV</p>
+      <h1>Your library,<br>in its best light.</h1>
+      <p class="lede">BeamOS plays your Plex, Jellyfin and Emby libraries and your Live TV exactly as the files were made. 4K HDR, Dolby Vision and Dolby Atmos, with no transcoding.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" data-link="appStore" data-soon-text="Coming soon to the App Store">Download on the App Store</a>
+        <a class="btn btn-ghost" data-link="testFlight" data-soon-text="Beta closed">Join the beta</a>
+      </div>
+      <p class="hero-note small">One week free, then from $3.99 a month. Setting up is always free.</p>
+      <div class="screen">
+        <img src="assets/shot-title.jpg" width="1920" height="1080" alt="A BeamOS title page on Apple TV for His Girl Friday, with ratings, a synopsis, Play, Watch Together and a Direct Play version.">
+      </div>
+    </div>
+  </section>
+
+  <div class="servers">
+    <div class="wrap">
+      <p class="small">Connect what you already have</p>
+      <ul>
+        <li class="chip"><span class="dot" style="background:#e5a00d"></span>Plex</li>
+        <li class="chip"><span class="dot" style="background:#9f7ede"></span>Jellyfin</li>
+        <li class="chip"><span class="dot" style="background:#52b54b"></span>Emby</li>
+        <li class="chip"><span class="dot" style="background:#e5a00d"></span>Plex Live TV &amp; DVR</li>
+        <li class="chip"><span class="dot" style="background:#7ab8e8"></span>Xtream Codes IPTV</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Stories -->
+  <section id="features">
+    <div class="wrap story">
+      <div class="story-text">
+        <p class="eyebrow">Playback</p>
+        <h2>Plays the file. Not a copy of it.</h2>
+        <p class="lede">Most players ask your server to convert anything Apple TV can't open on its own. BeamOS carries its own playback engine, so the original file plays straight from your server, untouched.</p>
+        <ul>
+          <li>MKV and MP4: H.264, HEVC and AV1, in 4K</li>
+          <li>HDR10, HDR10+, HLG and Dolby Vision, including UHD Blu-ray (profile 7) converted on the fly</li>
+          <li>Lossless TrueHD and DTS-HD MA, with Dolby Atmos and DTS:X height channels</li>
+          <li>Switches your TV to each title's frame rate and HDR format</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="assets/shot-player.jpg?v=2" width="2400" height="1350" loading="lazy" alt="BeamOS player with its simple controls over a black-and-white film."></div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap story flip">
+      <div class="story-text">
+        <p class="eyebrow">Library</p>
+        <h2>All your servers. One place to watch.</h2>
+        <p class="lede">Connect as many Plex, Jellyfin and Emby servers as you like. BeamOS brings them together into one Home, one Library and one Search, with rich artwork, ratings and cast for everything.</p>
+        <ul>
+          <li>Continue watching across every server</li>
+          <li>Ratings from Rotten Tomatoes, IMDb and TMDB</li>
+          <li>Search titles, people and live channels at once</li>
+          <li>Profiles for everyone in the house, with PINs</li>
+          <li>Synced across your Apple TV, iPhone and iPad with iCloud</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="assets/shot-home.jpg" width="1340" height="1030" loading="lazy" alt="The BeamOS Home screen with a Watching row and Recently Added movies."></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap story">
+      <div class="story-text">
+        <p class="eyebrow">Made for the couch</p>
+        <h2>It knows when to skip.</h2>
+        <p class="lede">BeamOS finds intros, "previously on" recaps and end credits by itself, right on your Apple TV, even when your server has never marked them. Then it skips them, or offers to, your choice.</p>
+        <ul>
+          <li>Skip Intro, Skip Recap and Up Next on every show</li>
+          <li>Subtitles from OpenSubtitles, in a couple of clicks</li>
+          <li>Ask Siri to play a movie, a show or a channel</li>
+          <li>Watch Together, in sync with friends</li>
+        </ul>
+      </div>
+      <div class="shot"><img src="assets/shot-title-actions.jpg" width="1120" height="705" loading="lazy" alt="Close-up of a BeamOS title page: Play, Watch Together, Trailer and Watchlist, with ratings and a Direct Play version."></div>
+    </div>
+  </section>
+
+  <!-- Live TV -->
+  <section id="live-tv" class="band">
+    <div class="wrap story flip">
+      <div class="story-text">
+        <p class="eyebrow">Live TV</p>
+        <h2>A real TV guide for your channels.</h2>
+        <p class="lede">Watch the antenna channels from your Plex server's tuner, add your own Xtream Codes subscription, or both. BeamOS turns them into one proper guide: fast to browse, even with tens of thousands of channels.</p>
+        <ul>
+          <li>Plex Live TV: your Plex tuner's channels, with no IPTV subscription needed</li>
+          <li>Plex DVR recordings play straight from your library</li>
+          <li>Full program guide that starts at what's on now</li>
+          <li>Favorites, recents and your own categories, synced across your devices with iCloud</li>
+          <li>Multiview: up to four channels, or a movie and the game, at once</li>
+          <li>Pause and rewind live TV, then jump back to live</li>
+          <li>Other Streams: switch to a channel's backup or HD feed</li>
+        </ul>
+      </div>
+      <div class="guide" role="img" aria-label="Illustration of the BeamOS Live TV guide with four channels and their programs.">
+        <div class="guide-head"><span>Today</span><span>8:00</span><span>8:30</span><span>9:00</span><span>9:30</span></div>
+        <div class="guide-row"><div class="ch">Harbor News</div>
+          <div class="progs" style="grid-template-columns:2fr 1fr 1fr"><div class="prog p1 focus"><small>Now</small><b>Evening Report</b></div><div class="prog p5"><small>9:00</small><b>World Tonight</b></div><div class="prog p3"><small>9:30</small><b>Weather</b></div></div></div>
+        <div class="guide-row"><div class="ch">Northside Sports</div>
+          <div class="progs" style="grid-template-columns:3fr 1fr"><div class="prog p6"><small>Live</small><b>Championship Final</b></div><div class="prog p4"><small>9:30</small><b>Post-Game</b></div></div></div>
+        <div class="guide-row"><div class="ch">Cinema One</div>
+          <div class="progs" style="grid-template-columns:1fr 3fr"><div class="prog p2"><small>8:00</small><b>Shorts</b></div><div class="prog p3"><small>8:30</small><b>Classic Movie Night</b></div></div></div>
+        <div class="guide-row"><div class="ch">Retro TV</div>
+          <div class="progs" style="grid-template-columns:1fr 1fr 1fr 1fr"><div class="prog p4"><small>8:00</small><b>Sitcom</b></div><div class="prog p4"><small>8:30</small><b>Sitcom</b></div><div class="prog p5"><small>9:00</small><b>Game Show</b></div><div class="prog p1"><small>9:30</small><b>Mystery</b></div></div></div>
+        <p class="guide-foot">Illustration. BeamOS includes no channels; it works with your Plex tuner or your own provider.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multiview -->
+  <section id="multiview">
+    <div class="wrap story">
+      <div class="story-text">
+        <p class="eyebrow">Multiview</p>
+        <h2>Your movie and the game, together.</h2>
+        <p class="lede">Watching something from your library when kick-off comes round? Press the Live TV button in the player and BeamOS keeps your movie playing, right where you were, with live channels beside it.</p>
+        <ul>
+          <li>Mix library titles and live channels, up to four tiles</li>
+          <li>Picture in picture, or an even grid</li>
+          <li>Choose which tile you hear, and swap with a click</li>
+          <li>Open any tile full screen, then come straight back</li>
+        </ul>
+      </div>
+      <div class="mv" role="img" aria-label="Illustration of Multiview: a black-and-white movie fills the screen while two live channels play in small tiles in the corner.">
+        <img src="assets/shot-film.jpg" width="2400" height="1350" loading="lazy" alt="">
+        <div class="mv-stack">
+          <div class="mv-tile p6"><span class="mv-live">LIVE</span><b>Northside Sports</b><small>Championship Final</small></div>
+          <div class="mv-tile p1"><span class="mv-live">LIVE</span><b>Harbor News</b><small>Evening Report</small></div>
+        </div>
+        <span class="mv-audio">🔊 Movie</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Listen on iPhone -->
+  <section id="listen" class="band">
+    <div class="wrap story flip">
+      <div class="story-text">
+        <p class="eyebrow">Listen on iPhone</p>
+        <h2>One room. Two soundtracks.</h2>
+        <p class="lede">The TV plays one tile's sound for the room. Open BeamOS on your iPhone and listen to any other tile on your AirPods, in sync with the picture. Catch the game while everyone else hears the movie.</p>
+        <ul>
+          <li>Your iPhone finds the Multiview on its own, over your Wi-Fi</li>
+          <li>Pick a tile from the phone; no need to touch the TV remote</li>
+          <li>Live channels and library titles both work</li>
+          <li>Kept in time with the TV, with a fine-tune if you need it</li>
+        </ul>
+        <p class="small">Needs BeamOS on your iPhone, on the same Wi-Fi as your Apple TV. Works with AirPods or any headphones your iPhone uses.</p>
+      </div>
+      <div class="phone-wrap" role="img" aria-label="Illustration of the BeamOS iPhone app: Multiview on Living Room, choosing Northside Sports to hear on AirPods while the movie plays on the TV.">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <p class="phone-kicker">Multiview on Living Room</p>
+          <p class="phone-title">Which channel?</p>
+          <div class="chip-row">
+            <span class="pchip">His Girl Friday <em>on TV</em></span>
+            <span class="pchip on">🎧 Northside Sports</span>
+            <span class="pchip">Harbor News</span>
+          </div>
+          <div class="now">
+            <span class="mv-live">LIVE</span>
+            <b>Northside Sports</b>
+            <small>Championship Final · playing on AirPods</small>
+            <div class="bars"><i></i><i></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="sync"><span>Sound</span><span class="pm">−</span><span class="pm">+</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature grid -->
+  <section>
+    <div class="wrap">
+      <div class="grid-head">
+        <p class="eyebrow">Everything included</p>
+        <h2>All of it, in every plan.</h2>
+        <p class="lede">There's no cut-down version of BeamOS. Every plan unlocks every feature, on your Apple TV, iPhone and iPad.</p>
+      </div>
+      <div class="features">
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8"/></svg></div><h3>Every HDR format</h3><p>HDR10, HDR10+, HLG and Dolby Vision, with your TV switched to match each title. UHD Blu-ray Dolby Vision (profile 7) converted on the fly.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17V7l5 10V7M14 7h6M14 12h4M14 17h6"/></svg></div><h3>AV1 <span class="tag">NEW</span></h3><p>The newest streaming codec, decoded by BeamOS itself up to 1080p, and up to 4K in hardware on the latest Apple TV 4K. HDR10+ included.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10v4M7 7v10M11 4v16M15 8v8M19 10v4"/></svg></div><h3>Dolby Atmos and DTS:X</h3><p>Lossless TrueHD and DTS-HD MA, with Atmos and DTS:X height channels up to 7.1.4. AC3, E-AC3 and FLAC too.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></div><h3>Direct Play everything</h3><p>BeamOS's own engine plays the MKV files Apple TV can't, so your server never transcodes.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 5l7 7-7 7M4 5l7 7-7 7"/></svg></div><h3>Skip intros, recaps and credits</h3><p>Found automatically on your Apple TV, even when your server never marked them.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M7 15h4M13 15h4M7 11h10"/></svg></div><h3>Subtitles your way</h3><p>Text and PGS subtitles, OpenSubtitles downloads, timing controls, your own style, and generated subtitles on tvOS 27.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg></div><h3>Multiview</h3><p>Up to four tiles at once: live channels, or your movie beside the game. Pick which one you hear.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="2" y="14" width="5" height="7" rx="2"/><rect x="17" y="14" width="5" height="7" rx="2"/></svg></div><h3>Listen on iPhone</h3><p>Hear another Multiview tile on your AirPods, in sync, while the room hears the TV.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2M5 5l-2-2"/></svg></div><h3>Pause and rewind live TV</h3><p>Missed the play? Rewind live channels, then jump straight back to live.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M15 20c0-2.2 1.3-4 3-4.6"/></svg></div><h3>Watch Together</h3><p>Play, pause and seek in sync with friends watching from the same server.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9 5.5-.8z"/></svg></div><h3>AI Upscaling</h3><p>Sharper standard-definition video on Apple TV models that support it.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10a7 7 0 0 1-14 0M12 17v5"/></svg></div><h3>Siri</h3><p>Ask Siri to play a movie, a show or a live channel, by name.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div><h3>Profiles</h3><p>Plex Home users with PINs, each with their own Home, history and Live TV lock.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg></div><h3>Music too</h3><p>Your Plex and Jellyfin music and playlists, right alongside your movies.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="8" rx="2"/><rect x="2" y="14" width="6" height="7" rx="1"/><rect x="9" y="14" width="6" height="7" rx="1"/><rect x="16" y="14" width="6" height="7" rx="1"/></svg></div><h3>Top Shelf</h3><p>Continue Watching right on the Apple TV Home Screen, before you even open the app.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 8v8"/></svg></div><h3>Requests</h3><p>Ask for missing movies and shows through Overseerr or Jellyseerr.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg></div><h3>Synced with iCloud</h3><p>Servers, sign-ins, profiles, Live TV favorites and settings follow you to every Apple TV, iPhone and iPad. A new Apple TV sets itself up.</p></div>
+        <div class="feature"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z"/></svg></div><h3>Private by design</h3><p>No ads, no tracking, no account with us. Your servers talk to your Apple TV, not to us.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accessibility -->
+  <section class="band">
+    <div class="wrap story solo">
+      <div class="story-text">
+        <p class="eyebrow">Accessibility</p>
+        <h2>Comfortable for everyone.</h2>
+        <p class="lede">BeamOS follows the accessibility settings you've already chosen on your Apple TV.</p>
+        <ul>
+          <li>Larger Text, all the way to the biggest size in tvOS 27</li>
+          <li>Your subtitle style: Large Text, Outline, Classic or your own</li>
+          <li>Subtitles your Apple TV generates when a file has none (tvOS 27)</li>
+          <li>Reduce Motion and Bold Text</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="pricing">
+    <div class="wrap">
+      <div class="grid-head">
+        <p class="eyebrow">Pricing</p>
+        <h2>One week free. Then pick your plan.</h2>
+        <p class="lede">Set up for free and see your own library working first. Every plan includes every feature.</p>
+      </div>
+      <div class="plans">
+        <div class="plan">
+          <h3>Monthly</h3>
+          <p class="price">$3.99 <span class="per">/ month</span></p>
+          <p class="note">Billed monthly. Cancel anytime.</p>
+          <a class="btn btn-ghost" data-link="appStore" data-soon-text="Coming soon">Choose Monthly</a>
+        </div>
+        <div class="plan best">
+          <span class="badge">BEST VALUE</span>
+          <h3>Yearly</h3>
+          <p class="price">$34.99 <span class="per">/ year</span></p>
+          <p class="note">One week free, then $34.99 a year. Save 27% over monthly.</p>
+          <a class="btn btn-primary" data-link="appStore" data-soon-text="Coming soon">Start your free week</a>
+        </div>
+        <div class="plan">
+          <h3>Lifetime</h3>
+          <p class="price">$119.99 <span class="per">once</span></p>
+          <p class="note">Pay once. Yours for good, with every future update.</p>
+          <a class="btn btn-ghost" data-link="appStore" data-soon-text="Coming soon">Buy Lifetime</a>
+        </div>
+      </div>
+      <ul class="included">
+        <li>Apple TV, iPhone and iPad on your Apple Account</li>
+        <li>Unlimited servers and profiles</li>
+        <li>Live TV and Multiview</li>
+        <li>4K, HDR10+, Dolby Vision and AV1</li>
+        <li>Dolby Atmos and DTS:X</li>
+        <li>All future updates</li>
+      </ul>
+      <p class="fine small">US prices; the App Store shows yours in your own currency. Subscriptions renew automatically until cancelled in Settings › Users and Accounts on your Apple TV. Purchases are made through the App Store.</p>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section id="specs">
+    <div class="wrap">
+      <div class="grid-head">
+        <p class="eyebrow">Technical specifications</p>
+        <h2>What BeamOS plays.</h2>
+      </div>
+      <table class="specs">
+        <tr><th scope="row">Containers</th><td>MKV, MP4, MOV, M4V, MPEG-TS (Live TV)</td></tr>
+        <tr><th scope="row">Video</th><td>H.264 (AVC), H.265 (HEVC, including hev1), AV1 (8- and 10-bit), MPEG-2 and VC-1 via your server</td></tr>
+        <tr><th scope="row">HDR</th><td>HDR10, HDR10+ (HEVC and AV1), HLG, Dolby Vision profiles 5 and 8, and profile 7 (UHD Blu-ray) converted to 8.1 on the fly</td></tr>
+        <tr><th scope="row">Audio</th><td>Dolby TrueHD with Atmos, DTS:X, DTS, DTS-HD MA, Dolby Digital (AC3), Dolby Digital Plus (E-AC3), AAC, FLAC, Opus, MP3, MP2, PCM</td></tr>
+        <tr><th scope="row">Subtitles</th><td>SRT, WebVTT, SSA/ASS (text), MP4 timed text, PGS, plus OpenSubtitles downloads</td></tr>
+        <tr><th scope="row">Media servers</th><td>Plex, Jellyfin, Emby</td></tr>
+        <tr><th scope="row">Live TV</th><td>Plex Live TV &amp; DVR (a tuner such as HDHomeRun in your Plex server); Xtream Codes accounts with XMLTV guide data</td></tr>
+        <tr><th scope="row">Requests</th><td>Overseerr, Jellyseerr</td></tr>
+        <tr><th scope="row">Requirements</th><td>Apple TV HD or Apple TV 4K with tvOS 18 or later; iPhone or iPad with iOS or iPadOS 18 or later. Larger Text and generated subtitles need tvOS 27; AI Upscaling needs a supported Apple TV 4K. AV1 plays up to 1080p in software, and up to 4K on Apple TV models with AV1 hardware. Listen on iPhone needs your iPhone on the same Wi-Fi as the Apple TV.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- Community -->
+  <section id="community" class="band">
+    <div class="wrap">
+      <div class="grid-head">
+        <p class="eyebrow">Community</p>
+        <h2>Help shape BeamOS.</h2>
+        <p class="lede">Join the BeamOS forum to report a problem, suggest a feature, vote on what comes next, or just talk about your setup.</p>
+      </div>
+      <div class="community-grid">
+        <div class="cats">
+          <a class="cat" data-link="announcements"><span class="swatch" style="background:var(--amber)"></span><div><h3>Announcements</h3><p>New releases and what's in them.</p></div></a>
+          <a class="cat" data-link="bugs"><span class="swatch" style="background:#ff5a5a"></span><div><h3>Report a Problem</h3><p>Something not playing right? Tell us the title, the server and what happened.</p></div></a>
+          <a class="cat" data-link="suggestions"><span class="swatch" style="background:var(--blue)"></span><div><h3>Suggestions</h3><p>Share ideas and vote on the features you want next.</p></div></a>
+          <a class="cat" data-link="general"><span class="swatch" style="background:var(--green)"></span><div><h3>General</h3><p>Setups, tips, servers, and everything else.</p></div></a>
+        </div>
+        <div class="notify">
+          <h3>Get new releases by email</h3>
+          <p class="muted">Hear about every new version of BeamOS, and every beta, as soon as it's out.</p>
+          <ol>
+            <li>Create a free forum account with your email.</li>
+            <li>Open <strong>Announcements</strong> and choose <strong>Watching First Post</strong>.</li>
+            <li>That's it: each release arrives in your inbox.</li>
+          </ol>
+          <a class="btn btn-amber" data-link="community" data-soon-text="Forum opening soon">Join the forum</a>
+          <p class="small" style="margin-top:14px">Using the app? You can also send a report straight from Settings › About › Send Feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="grid-head"><p class="eyebrow">Questions</p><h2>Good to know.</h2></div>
+      <div class="faq">
+        <details><summary>Does BeamOS come with any movies, shows or channels?</summary><p>No. BeamOS plays media from servers and subscriptions you already have: your own Plex, Jellyfin or Emby server, and your own IPTV provider.</p></details>
+        <details><summary>Will my server have to transcode?</summary><p>Almost never. BeamOS plays the original file wherever your Apple TV can show it, including MKV with lossless audio. Transcoding is only a last resort, for formats no Apple TV can decode.</p></details>
+        <details><summary>Can I try it before paying?</summary><p>Yes. Setting up is free, so you can connect your server and see your library first. The yearly plan then starts with a free week.</p></details>
+        <details><summary>Which devices does BeamOS run on?</summary><p>Apple TV, iPhone and iPad today, with more on the way. One purchase covers them all. Your servers, profiles and settings sync between them with iCloud.</p></details>
+        <details><summary>Does Plex need a Plex Pass?</summary><p>No. BeamOS works with any Plex account. Plex Live TV &amp; DVR is the exception: Plex requires a Plex Pass and a tuner on the server for that. Some other features, like streaming from outside your home, depend on your server owner's Plex setup.</p></details>
+        <details><summary>Do I have to set it up on every device?</summary><p>No. With iCloud sync on, your servers, sign-ins, profiles, Live TV favorites and settings follow you to every Apple TV, iPhone and iPad signed in to the same Apple Account. You choose what syncs in Settings › About &amp; Sync.</p></details>
+        <details><summary>What do you collect?</summary><p>Nothing about your library. There are no ads, no analytics and no tracking. Read the <a href="privacy.html">privacy policy</a>.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <img src="assets/icon.png" alt="" width="200" height="120" style="margin:0 auto 26px;border-radius:24px">
+      <h2>Ready to press play?</h2>
+      <p class="lede">Your library has never looked or sounded this good on Apple TV.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" data-link="appStore" data-soon-text="Coming soon to the App Store">Download on the App Store</a>
+        <a class="btn btn-ghost" data-link="testFlight" data-soon-text="Beta closed">Join the beta</a>
+      </div>
+    </div>
+  </section>
+
 </main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Logan Schaefer. Plex, Jellyfin, Emby and Apple TV are trademarks of their owners; BeamOS isn't affiliated with them.</span>
+    <nav aria-label="Footer">
+      <a href="support.html">Support</a>
+      <a href="privacy.html">Privacy</a>
+      <a data-link="community" data-soon-text="Forum (soon)">Forum</a>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>
